@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#120c07">
+  <title>Пивбар — 6 сортов крафта и живой звук каждый четверг</title>
+  <meta name="description" content="Крафт-бар на 24 места: 6 кранов со свежим пивом от локальных пивоварен, акустика, инди и джаз каждый четверг в 20:00. Первый глоток из нового крана — за наш счёт.">
+  <meta property="og:title" content="Пивбар — крафт и джаз каждый четверг">
+  <meta property="og:description" content="6 свежих кранов, 24 места, живой звук без перегруза. Дегустационный сет «Четверг с крафтом и джазом».">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <noscript>
+    <style>
+      .reveal { opacity: 1 !important; translate: none !important; }
+      .line__in { transform: none !important; }
+      .hero__sub, .hero__actions, .hero__facts { translate: none !important; }
+    </style>
+  </noscript>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24">
+      <path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24">
+      <path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-vk" viewBox="0 0 24 24">
+      <path d="m9.489.004.729-.003h3.564l.73.003.914.01.433.007.418.011.403.014.388.016.374.021.36.025.345.03.333.033c1.74.196 2.933.616 3.833 1.516.9.9 1.32 2.092 1.516 3.833l.034.333.029.346.025.36.02.373.025.588.012.41.013.644.009.915.004.98-.001 3.313-.003.73-.01.914-.007.433-.011.418-.014.403-.016.388-.021.374-.025.36-.03.345-.033.333c-.196 1.74-.616 2.933-1.516 3.833-.9.9-2.092 1.32-3.833 1.516l-.333.034-.346.029-.36.025-.373.02-.588.025-.41.012-.644.013-.915.009-.98.004-3.313-.001-.73-.003-.914-.01-.433-.007-.418-.011-.403-.014-.388-.016-.374-.021-.36-.025-.345-.03-.333-.033c-1.74-.196-2.933-.616-3.833-1.516-.9-.9-1.32-2.092-1.516-3.833l-.034-.333-.029-.346-.025-.36-.02-.373-.025-.588-.012-.41-.013-.644-.009-.915-.004-.98.001-3.313.003-.73.01-.914.007-.433.011-.418.014-.403.016-.388.021-.374.025-.36.03-.345.033-.333c.196-1.74.616-2.933 1.516-3.833.9-.9 2.092-1.32 3.833-1.516l.333-.034.346-.029.36-.025.373-.02.588-.025.41-.012.644-.013.915-.009ZM6.79 7.3H4.05c.13 6.24 3.25 9.99 8.72 9.99h.31v-3.57c2.01.2 3.53 1.67 4.14 3.57h2.84c-.78-2.84-2.83-4.41-4.11-5.01 1.28-.74 3.08-2.54 3.51-4.98h-2.58c-.56 1.98-2.22 3.78-3.8 3.95V7.3H10.5v6.92c-1.6-.4-3.62-2.34-3.71-6.92Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-live" viewBox="0 0 24 24">
+      <path d="M4 10v4M8 6.5v11M12 3.5v17M16 7.5v9M20 10v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-tap" viewBox="0 0 24 24">
+      <path d="M8 4h9l-1 16H9L8 4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M8 8h9" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <circle cx="11.5" cy="12" r=".9" fill="currentColor"/>
+      <circle cx="14.5" cy="15" r=".7" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-seat" viewBox="0 0 24 24">
+      <path d="M7 4v10h10V4M5 14h14M7 14v6M17 14v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24">
+      <path d="M12 3 5 6v6c0 4 3 7 7 8 4-1 7-4 7-8V6l-7-3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path d="m5 12 4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <header class="header" id="header">
+    <div class="wrap header__inner">
+      <a class="logo" href="#top">
+        <span class="logo__mark" aria-hidden="true">6</span>
+        <span class="logo__text">Пивбар<small>craft &amp; jazz</small></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Основная навигация">
+        <a href="#now">Сейчас</a>
+        <a href="#pains">Знакомо?</a>
+        <a href="#solution">Наш бар</a>
+        <a href="#offer">Сет</a>
+      </nav>
+
+      <a class="btn btn--small btn--cream header__cta" href="XXXXXXXX" target="_blank" rel="noopener" data-cta="header">
+        <span>Забронировать</span>
+        <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+
+      <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <nav class="mobile-menu__nav" aria-label="Мобильная навигация">
+        <a href="#now"><span>01</span>Сейчас на кранах</a>
+        <a href="#pains"><span>02</span>Знакомая ситуация?</a>
+        <a href="#solution"><span>03</span>Наш бар</a>
+        <a href="#offer"><span>04</span>Дегустационный сет</a>
+        <a href="#book"><span>05</span>Забронировать</a>
+      </nav>
+      <a class="mobile-menu__social" href="XXXXXXXX" target="_blank" rel="noopener">
+        <svg class="icon" aria-hidden="true"><use href="#i-vk"/></svg>
+        XXXXXXXX
+      </a>
+      <p class="mobile-menu__note">24 места · 6 кранов · каждый четверг в 20:00</p>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="wrap hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow hero__eyebrow">
+            <span class="eyebrow__dash" aria-hidden="true"></span>
+            Крафт-бар · 24 места · живой звук
+          </p>
+
+          <h1 class="hero__title" id="heroTitle">
+            <span class="line"><span class="line__in line__in--outline" style="--n:0">Новые 6 сортов</span></span>
+            <span class="line"><span class="line__in" style="--n:1">пива и лайв-</span></span>
+            <span class="line"><span class="line__in" style="--n:2">выступления</span></span>
+            <span class="line"><span class="line__in" style="--n:3">каждый четверг.</span></span>
+          </h1>
+
+          <p class="hero__sub">
+            Мы привозим свежий крафт, а музыканты играют для души. Бояться, что «не зайдёт» — не нужно:
+            первый глоток из нового крана — <em>за наш счёт.</em>
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--amber btn--lg" href="XXXXXXXX" target="_blank" rel="noopener" data-cta="hero">
+              <span>Забронировать столик и получить сет</span>
+              <span class="btn__arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+            </a>
+            <a class="btn btn--ghost btn--lg" href="#now">
+              Что сейчас на кранах
+              <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+
+          <ul class="hero__facts">
+            <li><span class="dot" aria-hidden="true"></span>Первый глоток за счёт заведения</li>
+            <li>Без минимума по кухне</li>
+            <li>Парковка во дворе</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual">
+          <div class="disc" data-parallax="-0.08">
+            <svg class="disc__ring" viewBox="0 0 400 400" aria-hidden="true">
+              <defs>
+                <path id="ringPath" d="M200,200 m-168,0 a168,168 0 1,1 336,0 a168,168 0 1,1 -336,0"/>
+              </defs>
+              <text>
+                <textPath href="#ringPath" startOffset="0">
+                  ПЕРВЫЙ ГЛОТОК — ЗА НАШ СЧЁТ · КРАФТ · ДЖАЗ · ПЕРВЫЙ ГЛОТОК — ЗА НАШ СЧЁТ
+                </textPath>
+              </text>
+            </svg>
+            <div class="disc__photo">
+              <img src="assets/img/hero-beer.jpg" srcset="assets/img/hero-beer-800.jpg 800w, assets/img/hero-beer-1200.jpg 1200w, assets/img/hero-beer.jpg 1600w" sizes="(min-width: 900px) 414px, (min-width: 640px) 340px, 74vw" alt="Высокий стакан светлого пива с пеной в баре «Пивбар»" width="1600" height="1600" fetchpriority="high" decoding="async">
+            </div>
+          </div>
+          <div class="hero-tag hero-tag--a" data-parallax="0.14">
+            <span class="hero-tag__dot" aria-hidden="true"></span>
+            <span>6 кранов</span>
+            <small>ротация по четвергам</small>
+          </div>
+          <div class="hero-tag hero-tag--b" data-parallax="0.22">
+            <span class="hero-tag__live" aria-hidden="true"></span>
+            <span>live · чт</span>
+            <small>начало ровно в 20:00</small>
+          </div>
+          <div class="hero-tag hero-tag--c" data-parallax="0.1" aria-hidden="true">
+            <big>24</big>
+            <small>посадочных<br>места</small>
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-hint" href="#now">
+        <span class="scroll-hint__line" aria-hidden="true"></span>
+        <span>Листай вниз</span>
+      </a>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <div class="ticker__group">
+          <span>6 кранов</span><i>✦</i><span>24 места</span><i>✦</i><span>живой звук</span><i>✦</i><span>без минимума по кухне</span><i>✦</i><span>каждый четверг в 20:00</span><i>✦</i>
+        </div>
+        <div class="ticker__group">
+          <span>6 кранов</span><i>✦</i><span>24 места</span><i>✦</i><span>живой звук</span><i>✦</i><span>без минимума по кухне</span><i>✦</i><span>каждый четверг в 20:00</span><i>✦</i>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOW -->
+    <section class="section now" id="now" aria-labelledby="nowTitle">
+      <div class="wrap">
+        <header class="sec-head">
+          <div>
+            <p class="eyebrow reveal"><span class="eyebrow__dash" aria-hidden="true"></span>Прямо сейчас</p>
+            <h2 class="sec-title reveal" id="nowTitle" style="--i:1">На кранах и на&nbsp;сцене<br>прямо сейчас</h2>
+          </div>
+          <div class="sec-head__aside reveal" style="--i:2">
+            <span class="status"><span class="status__dot" aria-hidden="true"></span>live-ротация</span>
+            <p class="updated" id="updatedLabel">Обновляем каждую неделю</p>
+          </div>
+        </header>
+
+        <div class="tap-grid" id="tapGrid"></div>
+        <noscript>
+          <p class="noscript-note">Включите JavaScript, чтобы увидеть актуальный список кранов, или спросите меню в <a href="XXXXXXXX">ВКонтакте</a>.</p>
+        </noscript>
+
+        <article class="stage reveal" id="stageCard" aria-labelledby="stageTitle">
+          <div class="stage__date" aria-hidden="true">
+            <span class="stage__day">чт</span>
+            <strong class="stage__time">20:00</strong>
+          </div>
+          <div class="stage__body">
+            <p class="eyebrow eyebrow--tight"><span class="eyebrow__dash" aria-hidden="true"></span>Сцена</p>
+            <h3 class="stage__title" id="stageTitle">Живой сет: акустика, инди и джаз</h3>
+            <p class="stage__text">Без фонограмм и перегруза. Успеваешь на первый бокал, слышишь каждую ноту и разговариваешь без крика.</p>
+          </div>
+          <ul class="stage__tags" aria-label="Форматы музыки">
+            <li>акустика</li>
+            <li>инди</li>
+            <li>джаз</li>
+          </ul>
+          <svg class="stage__icon" aria-hidden="true"><use href="#i-live"/></svg>
+        </article>
+      </div>
+    </section>
+
+    <!-- PAINS -->
+    <section class="section pains" id="pains" aria-labelledby="painsTitle">
+      <div class="wrap">
+        <header class="sec-head">
+          <div>
+            <p class="eyebrow reveal"><span class="eyebrow__dash" aria-hidden="true"></span>Знакомая история</p>
+            <h2 class="sec-title reveal" id="painsTitle" style="--i:1">Знакомая ситуация после тяжёлой рабочей недели?</h2>
+          </div>
+          <div class="sec-head__aside reveal" style="--i:2">
+            <p class="sec-count">01 <span>/ 04</span></p>
+          </div>
+        </header>
+
+        <div class="pain-grid">
+          <article class="pain reveal" style="--i:0">
+            <div class="pain__top">
+              <span class="pain__num">01</span>
+              <span class="pain__label">шум</span>
+            </div>
+            <h3 class="pain__title">Музыка громче разговора</h3>
+            <p class="pain__text">Ты приходишь в бар, но музыка играет так громко, что приходится кричать собеседнику в ухо.</p>
+            <p class="pain__outcome"><span>Итог</span>К концу вечера болит голова, а в памяти остаётся только усталость.</p>
+          </article>
+
+          <article class="pain reveal" style="--i:1">
+            <div class="pain__top">
+              <span class="pain__num">02</span>
+              <span class="pain__label">скучный вкус</span>
+            </div>
+            <h3 class="pain__title">На кранах — масс-маркет</h3>
+            <p class="pain__text">Ты хочешь попробовать интересное пиво, но на кранах один и тот же масс-маркет.</p>
+            <p class="pain__outcome"><span>Итог</span>Ты пьёшь три пинты скучного лагера, чувствуешь тяжесть и уходишь без гастрономического удовольствия.</p>
+          </article>
+
+          <article class="pain reveal" style="--i:2">
+            <div class="pain__top">
+              <span class="pain__num">03</span>
+              <span class="pain__label">нет места</span>
+            </div>
+            <h3 class="pain__title">Шумная компания и ни одного стула</h3>
+            <p class="pain__text">Ты планируешь спокойно посидеть в пятницу, но в баре шумная компания, отмечающая чей-то праздник.</p>
+            <p class="pain__outcome"><span>Итог</span>Ты не можешь найти свободный стул, атмосфера напряжённая, и ты уезжаешь домой раньше времени.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="section solution" id="solution" aria-labelledby="solutionTitle">
+      <div class="wrap solution__wrap">
+        <header class="solution__head">
+          <p class="eyebrow reveal"><span class="eyebrow__dash" aria-hidden="true"></span>Решение</p>
+          <h2 class="sec-title reveal" id="solutionTitle" style="--i:1">Мы сделали «Пивбар» местом, где ты <span class="nowrap">по-настоящему</span> выдыхаешь</h2>
+          <p class="solution__intro reveal" style="--i:2">Три правила, которые не меняются, даже если очень попросить.</p>
+        </header>
+
+        <div class="solution__main">
+          <figure class="solution__photo reveal" style="--i:3">
+            <img src="assets/img/cozy-table.jpg" srcset="assets/img/cozy-table-640.jpg 640w, assets/img/cozy-table-960.jpg 960w, assets/img/cozy-table.jpg 1200w" sizes="(min-width: 1200px) 660px, 92vw" alt="Атмосфера бара «Пивбар»" width="1200" height="900" loading="lazy" decoding="async">
+            <figcaption>
+              <span class="solution__photo-tag">Столики для бесед</span>
+              <span>Свет приглушён, музыка живая</span>
+            </figcaption>
+          </figure>
+
+          <div class="solution__list">
+            <article class="sol-row reveal" style="--i:0">
+            <span class="sol-row__num">01</span>
+            <div class="sol-row__body">
+              <h3 class="sol-row__title">Только живой звук — и его слышно</h3>
+              <p>Бронируем акустические, инди и джазовые составы. Ты слышишь каждую ноту и спокойно общаешься с девушкой или друзьями, не повышая голос.</p>
+            </div>
+            <div class="sol-row__meta">
+              <svg class="icon" aria-hidden="true"><use href="#i-live"/></svg>
+              <span>акустика · инди · джаз</span>
+            </div>
+          </article>
+
+          <article class="sol-row reveal" style="--i:1">
+            <span class="sol-row__num">02</span>
+            <div class="sol-row__body">
+              <h3 class="sol-row__title">6 кранов и новая ротация каждый четверг</h3>
+              <p>Свежий крафт от локальных пивоварен. За один вечер пробуешь 3–4 разных стиля и находишь свой новый любимый вкус.</p>
+            </div>
+            <div class="sol-row__meta">
+              <svg class="icon" aria-hidden="true"><use href="#i-tap"/></svg>
+              <span>локальные пивоварни</span>
+            </div>
+          </article>
+
+          <article class="sol-row reveal" style="--i:2">
+            <span class="sol-row__num">03</span>
+            <div class="sol-row__body">
+              <h3 class="sol-row__title">24 места и принципиально никаких банкетов</h3>
+              <p>Держим зал камерным, чтобы у тебя всегда был уютный угол. Никаких шумных компаний, только приватность и возможность расслабиться.</p>
+            </div>
+            <div class="sol-row__meta">
+              <svg class="icon" aria-hidden="true"><use href="#i-seat"/></svg>
+              <span>всего 24 посадочных места</span>
+            </div>
+          </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA #2 -->
+    <aside class="cta-band" aria-label="Призыв к бронированию">
+      <div class="wrap cta-band__inner">
+        <div class="cta-band__text reveal">
+          <p class="cta-band__kicker">Проверь в четверг</p>
+          <p class="cta-band__title">Тихий столик, свежий кран и живой звук. Без крика и суеты.</p>
+        </div>
+        <div class="cta-band__action reveal" style="--i:1">
+          <a class="btn btn--amber btn--lg" href="XXXXXXXX" target="_blank" rel="noopener" data-cta="after-solution">
+            <span>Забронировать столик</span>
+            <span class="btn__arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+          </a>
+          <p class="cta-band__note">Ответим в ВКонтакте за 3 минуты</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- OFFER -->
+    <section class="section offer" id="offer" aria-labelledby="offerTitle">
+      <div class="wrap">
+        <header class="sec-head">
+          <div>
+            <p class="eyebrow reveal"><span class="eyebrow__dash" aria-hidden="true"></span>Главный оффер</p>
+            <h2 class="sec-title reveal" id="offerTitle" style="--i:1">Дегустационный сет «Четверг с крафтом и джазом»</h2>
+          </div>
+          <div class="sec-head__aside reveal" style="--i:2">
+            <p class="sec-count">03 <span>/ 04</span></p>
+          </div>
+        </header>
+
+        <div class="offer-panel reveal">
+          <div class="offer-panel__head">
+            <p class="tag" aria-label="Оффер недели"><span aria-hidden="true"></span>Оффер недели<span aria-hidden="true"></span></p>
+            <div class="flight" aria-hidden="true">
+              <span class="flight__glass" style="--beer:#e3a43c"><span>01</span></span>
+              <span class="flight__glass" style="--beer:#f19656"><span>02</span></span>
+              <span class="flight__glass" style="--beer:#c21d24"><span>03</span></span>
+              <span class="flight__glass" style="--beer:#6b4326"><span>04</span></span>
+            </div>
+          </div>
+
+          <div class="offer-panel__grid">
+            <div class="offer-content">
+              <h3 class="offer-content__title">Что входит в сет</h3>
+              <ul class="offer-list">
+                <li>
+                  <span class="offer-list__num">01</span>
+                  <div>
+                    <h4>4 бокала по 150 мл из текущей линейки 6 кранов</h4>
+                    <p>Бармен соберёт сет под твой вкус: от лёгкого гозе до плотного имперского стаута.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="offer-list__num">02</span>
+                  <div>
+                    <h4>Столик в тихой зоне на выбор</h4>
+                    <p>Сядешь там, где спокойно и удобно: за барной стойкой или за столиком у окна.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="offer-list__num">03</span>
+                  <div>
+                    <h4>Живой концерт вечернего сета</h4>
+                    <p>Начало ровно в 20:00. Без обязательного минимума по кухне — только пиво и музыка.</p>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="guarantee">
+                <svg class="guarantee__icon" aria-hidden="true"><use href="#i-shield"/></svg>
+                <div>
+                  <p class="guarantee__title">Гарантия вкуса</p>
+                  <p>Не понравится ни один из 4 сортов в сете — вернём деньги и нальём классический чешский пилснер за счёт заведения.</p>
+                </div>
+              </div>
+            </div>
+
+            <aside class="ticket" aria-label="Параметры дегустационного сета">
+              <p class="ticket__label">Дегустационный сет</p>
+              <p class="ticket__big">4 × 150 <span>мл</span></p>
+              <p class="ticket__sub">четыре разных стиля из шести кранов</p>
+
+              <ul class="ticket__list">
+                <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-tap"/></svg>Бармен собирает под твой вкус</li>
+                <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-seat"/></svg>Столик в тихой зоне</li>
+                <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-live"/></svg>Концерт в 20:00</li>
+              </ul>
+
+              <div class="ticket__urgency">
+                <span class="ticket__pulse" aria-hidden="true"></span>
+                <p><strong>Только четверг и пятница.</strong> Пока не разобрали лимитированные 30 литров свежей варки, которую привезли сегодня утром.</p>
+              </div>
+
+              <a class="btn btn--dark btn--lg ticket__btn" href="XXXXXXXX" target="_blank" rel="noopener" data-cta="offer">
+                <span>Забронировать сет</span>
+                <span class="btn__arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+              </a>
+              <p class="ticket__note">Ответим в ВКонтакте за 3 минуты</p>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL -->
+    <section class="final" id="book" aria-labelledby="finalTitle">
+      <div class="final__glow" aria-hidden="true"></div>
+      <div class="final__word" aria-hidden="true" data-parallax="0.06">ПИВБАР</div>
+      <div class="wrap final__inner">
+        <p class="eyebrow reveal"><span class="eyebrow__dash" aria-hidden="true"></span>Финальный шаг</p>
+        <h2 class="final__title reveal" id="finalTitle" style="--i:1">
+          Четверг начинается<br><span class="outline">с одного сообщения.</span>
+        </h2>
+        <p class="final__text reveal" style="--i:2">Забронируем столик в тихой зоне, соберём сет под твой вкус и пришлём афишу на неделю.</p>
+
+        <a class="btn btn--amber btn--xl final__btn reveal" style="--i:3" href="XXXXXXXX" target="_blank" rel="noopener" data-cta="final">
+          <span>Забронировать столик и получить сет</span>
+          <span class="btn__arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+        </a>
+
+        <p class="final__micro reveal" style="--i:4">
+          Ответим в ВКонтакте за 3 минуты и пришлём актуальное меню из 6 сортов и афишу музыкантов на эту неделю.
+        </p>
+
+        <ul class="final__checks reveal" style="--i:5">
+          <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>6 сортов на кранах</li>
+          <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>24 места в зале</li>
+          <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>live в 20:00</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <a class="logo logo--footer" href="#top">
+          <span class="logo__mark" aria-hidden="true">6</span>
+          <span class="logo__text">Пивбар<small>craft &amp; jazz</small></span>
+        </a>
+        <nav class="footer__nav" aria-label="Навигация в подвале">
+          <a href="#now">Краны</a>
+          <a href="#solution">Наш бар</a>
+          <a href="#offer">Сет</a>
+          <a href="#book">Бронирование</a>
+        </nav>
+        <a class="footer__social" href="XXXXXXXX" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-vk"/></svg>
+          XXXXXXXX
+          <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-up"/></svg>
+        </a>
+      </div>
+      <div class="footer__cta">
+        <p>Столик на четверг ещё есть. Сет соберём под твой вкус.</p>
+        <a class="btn btn--amber btn--small" href="XXXXXXXX" target="_blank" rel="noopener" data-cta="footer">
+          <span>Забронировать столик</span>
+          <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 «Пивбар». Крафт и джаз каждый четверг.</p>
+        <p>18+ Чрезмерное употребление алкоголя вредит вашему здоровью.</p>
+        <a href="#top" class="footer__up">Наверх ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ORDER FORM MODAL -->
+  <dialog class="order-modal" id="orderModal" aria-labelledby="orderModalTitle">
+    <div class="order-modal__bar">
+      <p class="order-modal__title" id="orderModalTitle">Бронирование столика</p>
+      <a class="order-modal__newtab" href="https://forms.yandex.ru/u/6afb127cb9e5ca882335b0e7/" target="_blank" rel="noopener">Открыть в новой вкладке ↗</a>
+      <button class="order-modal__close" type="button" data-close-modal aria-label="Закрыть форму">
+        <svg class="icon icon--sm" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+    <div class="order-modal__body" id="orderFormBody"></div>
+  </dialog>
+
+  <!-- Код встраивания Яндекс Формы целиком; активируется при первом открытии окна -->
+  <template id="yaFormTemplate">
+    <script src="https://forms.yandex.ru/_static/embed.js"></script><iframe src="https://forms.yandex.ru/u/6afb127cb9e5ca882335b0e7?iframe=1" frameborder="0" name="ya-form-6afb127cb9e5ca882335b0e7" width="650" title="Форма бронирования столика"></iframe>
+  </template>
+
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
